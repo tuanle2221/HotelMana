@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.teasolution.net/soap/HotelManaDatabaseAccess" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.teasolution.net/soap/HotelManaDatabaseAccess" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.teasolution.net/soap/HotelManaDatabaseAccess">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="saveGiaRequest">
+    <wsdl:part name="gia" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="saveGiaResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getGiaRequest">
+    <wsdl:part name="not" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getGiaResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="saveLoaiPhongRequest">
+    <wsdl:part name="tenloai" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="saveLoaiPhongResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getLoaiPhongRequest">
+    <wsdl:part name="not" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getLoaiPhongResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getLoaiPhongByIdRequest">
+    <wsdl:part name="iid_loai" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getLoaiPhongByIdResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateLoaiPhongRequest">
+    <wsdl:part name="id_loai" type="xsd:string" />
+    <wsdl:part name="ten_loai" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateLoaiPhongResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteLoaiPhongRequest">
+    <wsdl:part name="id_loai" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteLoaiPhongResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="saveKhachRequest">
+    <wsdl:part name="tenkhach" type="xsd:string" />
+    <wsdl:part name="cmnd" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="saveKhachResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getKhachRequest">
+    <wsdl:part name="not" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getKhachResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getKhachByIdRequest">
+    <wsdl:part name="id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getKhachByIdResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getKhachByCmndRequest">
+    <wsdl:part name="cm" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getKhachByCmndResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="savePhongRequest">
+    <wsdl:part name="id_loai" type="xsd:string" />
+    <wsdl:part name="tenphong" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="savePhongResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getPhongRequest">
+    <wsdl:part name="not" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getPhongResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getPhongByIdRequest">
+    <wsdl:part name="id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getPhongByIdResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getPhongByIdLoaiRequest">
+    <wsdl:part name="id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getPhongByIdLoaiResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updatePhongRequest">
+    <wsdl:part name="id" type="xsd:string" />
+    <wsdl:part name="loai" type="xsd:string" />
+    <wsdl:part name="ten" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updatePhongResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="deletePhongRequest">
+    <wsdl:part name="id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="deletePhongResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="saveThueRequest">
+    <wsdl:part name="id_phong" type="xsd:string" />
+    <wsdl:part name="id_khach" type="xsd:string" />
+    <wsdl:part name="den" type="xsd:string" />
+    <wsdl:part name="di" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="saveThueResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getThueRequest">
+    <wsdl:part name="not" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getThueResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getThueByIdKhachRequest">
+    <wsdl:part name="id_khach" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getThueByIdKhachResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getThueByCmndRequest">
+    <wsdl:part name="cm" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getThueByCmndResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="saveApDungRequest">
+    <wsdl:part name="id_gia" type="xsd:string" />
+    <wsdl:part name="id_loai" type="xsd:string" />
+    <wsdl:part name="bdad" type="xsd:string" />
+    <wsdl:part name="ktad" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="saveApDungResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getApDungRequest">
+    <wsdl:part name="not" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getApDungResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="HotelManaDatabaseAccessPortType">
+    <wsdl:operation name="saveGia">
+      <documentation>Save Gia into database.</documentation>
+      <wsdl:input message="tns:saveGiaRequest" />
+      <wsdl:output message="tns:saveGiaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getGia">
+      <documentation>Get all record in table Gia.</documentation>
+      <wsdl:input message="tns:getGiaRequest" />
+      <wsdl:output message="tns:getGiaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="saveLoaiPhong">
+      <documentation>Save LoaiPhong into database.</documentation>
+      <wsdl:input message="tns:saveLoaiPhongRequest" />
+      <wsdl:output message="tns:saveLoaiPhongResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getLoaiPhong">
+      <documentation>Get all record in table LoaiPhong.</documentation>
+      <wsdl:input message="tns:getLoaiPhongRequest" />
+      <wsdl:output message="tns:getLoaiPhongResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getLoaiPhongById">
+      <documentation>Get record in table LoaiPhong with id_loai.</documentation>
+      <wsdl:input message="tns:getLoaiPhongByIdRequest" />
+      <wsdl:output message="tns:getLoaiPhongByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateLoaiPhong">
+      <documentation>Update record in LoaiPhong with id.</documentation>
+      <wsdl:input message="tns:updateLoaiPhongRequest" />
+      <wsdl:output message="tns:updateLoaiPhongResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteLoaiPhong">
+      <documentation>Delete record in table LoaiPhong with id_loai.</documentation>
+      <wsdl:input message="tns:deleteLoaiPhongRequest" />
+      <wsdl:output message="tns:deleteLoaiPhongResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="saveKhach">
+      <documentation>Save Khach into database.</documentation>
+      <wsdl:input message="tns:saveKhachRequest" />
+      <wsdl:output message="tns:saveKhachResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getKhach">
+      <documentation>Get all record in table Khach.</documentation>
+      <wsdl:input message="tns:getKhachRequest" />
+      <wsdl:output message="tns:getKhachResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getKhachById">
+      <documentation>Get record in table Khach with id khach.</documentation>
+      <wsdl:input message="tns:getKhachByIdRequest" />
+      <wsdl:output message="tns:getKhachByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getKhachByCmnd">
+      <documentation>Get record in table Khach with CMND.</documentation>
+      <wsdl:input message="tns:getKhachByCmndRequest" />
+      <wsdl:output message="tns:getKhachByCmndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="savePhong">
+      <documentation>Save Phong into database.</documentation>
+      <wsdl:input message="tns:savePhongRequest" />
+      <wsdl:output message="tns:savePhongResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhong">
+      <documentation>Get all record in table Phong.</documentation>
+      <wsdl:input message="tns:getPhongRequest" />
+      <wsdl:output message="tns:getPhongResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhongById">
+      <documentation>Get record in table Phong with id.</documentation>
+      <wsdl:input message="tns:getPhongByIdRequest" />
+      <wsdl:output message="tns:getPhongByIdResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhongByIdLoai">
+      <documentation>Get record in table Phong with id Loai.</documentation>
+      <wsdl:input message="tns:getPhongByIdLoaiRequest" />
+      <wsdl:output message="tns:getPhongByIdLoaiResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePhong">
+      <documentation>Update record in table Phong.</documentation>
+      <wsdl:input message="tns:updatePhongRequest" />
+      <wsdl:output message="tns:updatePhongResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deletePhong">
+      <documentation>Delete record in table Phong with id.</documentation>
+      <wsdl:input message="tns:deletePhongRequest" />
+      <wsdl:output message="tns:deletePhongResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="saveThue">
+      <documentation>Save Thue into database.</documentation>
+      <wsdl:input message="tns:saveThueRequest" />
+      <wsdl:output message="tns:saveThueResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getThue">
+      <documentation>Get all record in table Thue.</documentation>
+      <wsdl:input message="tns:getThueRequest" />
+      <wsdl:output message="tns:getThueResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getThueByIdKhach">
+      <documentation>Get all record in table Thue.</documentation>
+      <wsdl:input message="tns:getThueByIdKhachRequest" />
+      <wsdl:output message="tns:getThueByIdKhachResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getThueByCmnd">
+      <documentation>Get all record in table Thue.</documentation>
+      <wsdl:input message="tns:getThueByCmndRequest" />
+      <wsdl:output message="tns:getThueByCmndResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="saveApDung">
+      <documentation>Save ApDung into database.</documentation>
+      <wsdl:input message="tns:saveApDungRequest" />
+      <wsdl:output message="tns:saveApDungResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getApDung">
+      <documentation>Get all record in table ApDung.</documentation>
+      <wsdl:input message="tns:getApDungRequest" />
+      <wsdl:output message="tns:getApDungResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HotelManaDatabaseAccessBinding" type="tns:HotelManaDatabaseAccessPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="saveGia">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/saveGia" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGia">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getGia" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveLoaiPhong">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/saveLoaiPhong" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLoaiPhong">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getLoaiPhong" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLoaiPhongById">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getLoaiPhongById" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateLoaiPhong">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/updateLoaiPhong" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteLoaiPhong">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/deleteLoaiPhong" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveKhach">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/saveKhach" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKhach">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getKhach" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKhachById">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getKhachById" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKhachByCmnd">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getKhachByCmnd" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePhong">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/savePhong" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhong">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getPhong" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhongById">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getPhongById" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhongByIdLoai">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getPhongByIdLoai" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePhong">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/updatePhong" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePhong">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/deletePhong" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveThue">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/saveThue" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getThue">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getThue" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getThueByIdKhach">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getThueByIdKhach" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getThueByCmnd">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getThueByCmnd" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveApDung">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/saveApDung" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApDung">
+      <soap:operation soapAction="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php/getApDung" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.teasolution.net/service" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HotelManaDatabaseAccess">
+    <wsdl:port name="HotelManaDatabaseAccessPort" binding="tns:HotelManaDatabaseAccessBinding">
+      <soap:address location="http://www.teasolution.net/service/tea_hotelmanager_database/ws.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

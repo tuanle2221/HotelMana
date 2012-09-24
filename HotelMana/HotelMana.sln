@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelMana", "HotelMana\HotelMana.csproj", "{DCD8F70B-4707-4AC9-8280-D99C2547212E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCD8F70B-4707-4AC9-8280-D99C2547212E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD8F70B-4707-4AC9-8280-D99C2547212E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD8F70B-4707-4AC9-8280-D99C2547212E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD8F70B-4707-4AC9-8280-D99C2547212E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
